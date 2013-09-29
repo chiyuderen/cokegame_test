@@ -42,9 +42,9 @@
             });
             cQuestion.AM.loader.on("progress",prgressHandler);
             function prgressHandler(e){
-                var pre = (e.progress/e.total) * 100;
-                var str = pre + "%";
-                $("#progree").html(str);
+                var pre = (e.progress/e.total);
+
+                $("#progree").attr("value",pre);
             }
         }
         var initManager = function(){
@@ -87,7 +87,7 @@
     </script>
     <body onload="initThis();">
         加载进度222bbbbddddd
-        <label id="progree">sdfad</label>
+        <progress id="progree"></progress>
         <div id="box">点我点我在</div>
         剩余时间：<div id="time"></div>
         总分：<div id="totalScore"></div>
