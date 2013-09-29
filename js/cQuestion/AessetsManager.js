@@ -8,7 +8,7 @@
 this.cQuestion = this.cQuestion||{};
 (function(){
     var AssetsManager = function(){
-        throw("QuestionRenderFactory不能被实例化");
+        throw("AssetsManager不能被实例化");
     };
     cQuestion.AssetsManager = AssetsManager;
     cQuestion.AM = AssetsManager;
@@ -36,6 +36,14 @@ this.cQuestion = this.cQuestion||{};
     var QUESTIONS_ASSETS = [
         {src:"data/question.json",id:"questions"}
     ];
+
+    var SOUND_ASSETS = [
+        {src:"assets/sound.mp3",id:"bgSound"}
+    ];
+
+    var getDefaultManiFest = function(){
+        return TEMPLETE_ASSETS.concat(QUESTIONS_ASSETS,DEFAULT_IMAGE_ASSETS,SOUND_ASSETS);
+    };
 
     /**
      * 返回一个问题模板
@@ -106,17 +114,16 @@ this.cQuestion = this.cQuestion||{};
     };
 
 
-    var getDefaultManiFest = function(){
-        return TEMPLETE_ASSETS.concat(QUESTIONS_ASSETS,DEFAULT_IMAGE_ASSETS);
-    };
-
     a.loader = null;
 
     a.init = function(){
         this.loader = a.loader||new createjs.LoadQueue(false);
         this.loader.removeAll ();
         this.loader.setMaxConnections(5);
-        this.loader.loadManifest(getDefaultManiFest());
+        this.loader.installPlugin(createjs.Sound);
+        var maniFest = getDefaultManiFest();
+        this.loader.loadManifest(maniFest);
+
     };
 
     /**

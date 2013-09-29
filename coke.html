@@ -6,6 +6,7 @@
         <script type="text/javascript" src="js/utils.js"></script>
         <script type="text/javascript" src="js/easeljs-0.7.0.min.js"></script>
         <script type="text/javascript" src="js/preloadjs-0.4.0.min.js"></script>
+        <script type="text/javascript" src="js/soundjs-0.5.0.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/project.js"></script>
 
@@ -15,7 +16,7 @@
         <script type="text/javascript" src="js/cQuestion/AessetsManager.js"></script>
         <script type="text/javascript" src="js/cQuestion/QuestionRenderBase.js"></script>
         <script type="text/javascript" src="js/cQuestion/MosaicGame.js"></script>
-
+        <script type="text/javascript" src="js/cQuestion/SoundManager.js"></script>
 
 
 
@@ -24,6 +25,7 @@
         <script type="text/javascript" src="js/createjs/LoadQueue.js"></script>
         <script type="text/javascript" src="js/createjs/TagLoader.js"></script>
         <script type="text/javascript" src="js/createjs/XHRLoader.js"></script>
+        <script type="text/javascript" src="js/createjs/Sound.js"></script>
 
         <script type="text/javascript" src="js/version.js"></script>
         <title>coke</title>
@@ -36,6 +38,8 @@
             cQuestion.AM.loader.on("complete",function(e){
                 initManager();
                 cQuestion.AM.loader.off("progress",prgressHandler);
+                var s = cQuestion.SM.play("bgSound");
+
             },null,true);
             cQuestion.AM.loader.on("error",function(e){
                 alert("加载失败:" + e.item.src + "可能要在服务器环境下测试。。。")
