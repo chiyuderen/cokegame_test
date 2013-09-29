@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="js/easeljs-0.7.0.min.js"></script>
+    <script type="text/javascript" src="js/preloadjs-0.4.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.overlay.js"></script>
+    <script type="text/javascript" src="js/project.js"></script>
+
+    <script type="text/javascript" src="js/cokeQGame/MosaicGame.js"></script>
+    <title></title>
+
+
+</head>
+<body >
+<canvas id="cavas" width="600" height="600"></canvas>
+<script>
+
+    var canvas = $("#cavas").get(0);
+    var stage = new createjs.Stage(canvas);
+    var game = new cokeQGame.MosaicGame(stage);
+    var param = {"bg":"assets/bg.jpg","imags":[{"src":"assets/s1.png","x":0,"y":0,"tx":179,"ty":22},
+        {"src":"assets/s1.png","x":0,"y":0,"tx":100,"ty":10}
+    ]};
+    game.initGame(param);
+
+</script>
+</body>
+</html>

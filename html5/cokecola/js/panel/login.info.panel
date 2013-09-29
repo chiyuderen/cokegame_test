@@ -1,0 +1,20 @@
+// JavaScript Document
+var loginInfo = function(value){
+	//头像地址
+	this.head = "";
+	//等级
+	this.level = "1";
+	
+	this.nick = "test";
+	this.secAdmit = "0";
+	this.topScore = "0"
+	if(value.code == 0)
+	{
+		//成功了 
+		
+	}
+	else
+	{
+		
+	}
+}
