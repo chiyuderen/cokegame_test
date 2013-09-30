@@ -39,6 +39,7 @@
                 initManager();
                 cQuestion.AM.loader.off("progress",prgressHandler);
                 var s = cQuestion.SM.play("bgSound");
+                trace(s.playState);
 
             },null,true);
             cQuestion.AM.loader.on("error",function(e){

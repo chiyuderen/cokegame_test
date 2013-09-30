@@ -38,7 +38,7 @@ this.cQuestion = this.cQuestion||{};
     ];
 
     var SOUND_ASSETS = [
-        {src:"assets/sound.mp3",id:"bgSound"}
+        {src:"assets/sound.mp3|assets/sound.ogg",id:"bgSound"}
     ];
 
     var getDefaultManiFest = function(){
@@ -118,6 +118,7 @@ this.cQuestion = this.cQuestion||{};
 
     a.init = function(){
         this.loader = a.loader||new createjs.LoadQueue(false);
+
         this.loader.removeAll ();
         this.loader.setMaxConnections(5);
         this.loader.installPlugin(createjs.Sound);
