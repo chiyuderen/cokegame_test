@@ -22,7 +22,6 @@
 
                 var cloneRender = renderHtml.clone(true);
                 cloneRender.html(content);
-                cloneRender.attr("id",cloneRender.attr("id") + i);
                 this._$("q_content").append(cloneRender);
             }
             renderHtml.remove();
